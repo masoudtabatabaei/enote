@@ -1,7 +1,16 @@
+@font-face {
+    font-family: IRANSans;
+    src:url("../fonts/IRANSans-Light-web.ttf");
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body , input{
+    font-family: IRANSans , "Times New Roman";
 }
 
 .mar2 {
@@ -22,6 +31,10 @@
     color: #888888;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .center-align {
     text-align: center;
 }
@@ -29,7 +42,6 @@
 .btn {
     padding: 12px 20px;
     margin: 10px auto;
-    width: 50%;
     background: none;
     border-radius: 6px;
     border: none;

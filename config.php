@@ -14,3 +14,6 @@ $config['db']['userName'] = "root";
 $config['db']['password'] = "";
 $config['db']['dbName'] = "notes";
 
+// site config
+$config['lang'] = "fa";
+

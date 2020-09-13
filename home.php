@@ -8,6 +8,10 @@
 
 require_once "main.php";
 
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <html lang="fa">
@@ -21,7 +25,7 @@ require_once "main.php";
 <body>
 <div class="header">
     <div class="item profile"><?php echo $_SESSION['email']; ?></div>
-    <div class="item"><a href="logout.php">logout</a></div>
+    <div class="item"><a href="logout.php"><?php echo _logout_link; ?></a></div>
 </div>
 </body>
 </html>

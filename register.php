@@ -5,6 +5,8 @@
  * Date: 2020-09-12
  * Time: 3:21 PM
  */
+
+require_once "main.php";
 ?>
 
 <html lang="fa">
@@ -21,24 +23,24 @@
         <div class="page-icon mar2">
             <img src="img/notes.png">
         </div>
-        <p class="form-title pad-tb-1 font11">Register Form</p>
+        <p class="form-title pad-tb-1 font11"><?php echo _register_form; ?></p>
         <form class="main-form" method="post" action="register-check.php">
             <div class="left-align">
-                <input type="text" name="fullName" placeholder="Full Name" required>
+                <input type="text" name="fullName" placeholder="<?php echo _ph_fullName; ?>" required>
             </div>
             <div class="left-align">
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="<?php echo _ph_email; ?>" required>
             </div>
             <div class="left-align">
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="<?php echo _ph_password; ?>" required>
             </div>
             <div class="left-align">
-                <input type="password" name="rePassword" placeholder="Repeat Password" required>
+                <input type="password" name="rePassword" placeholder="<?php echo _ph_repeat_password; ?>" required>
             </div>
-            <input type="submit" class="btn btn-info" value="Register">
+            <input type="submit" class="btn btn-info" value="<?php echo _create_account; ?>">
         </form>
         <br>
-        <a class="underline center-align font8" href="login.php">Login Account</a>
+        <a class="center-align font8" href="login.php"><?php echo _login_link; ?></a>
     </div>
 </div>
 </body>

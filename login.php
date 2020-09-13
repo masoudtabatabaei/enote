@@ -9,7 +9,7 @@
 require_once "main.php";
 
 if (isset($_SESSION['email'])) {
-    $message = "You are already logged in. <a href='home.php' class='underline'>Visit Home</a> or <a href='logout.php' class='underline'>Logout</a>";
+    $message = _already_logged_in;
     require_once "msg-success.php";
     exit();
 }
@@ -30,18 +30,18 @@ if (isset($_SESSION['email'])) {
             <div class="page-icon mar2">
                 <img src="img/notes.png">
             </div>
-            <p class="form-title pad-tb-1 font11">Login Form</p>
+            <p class="form-title pad-tb-1 font11"><?php echo _login_form; ?></p>
             <form class="main-form" method="post" action="login-check.php">
                 <div class="left-align">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="<?php echo _ph_email; ?>" required>
                 </div>
                 <div class="left-align">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="<?php echo _ph_password; ?>" required>
                 </div>
-                <input type="submit" class="btn btn-info" value="Login">
+                <input type="submit" class="btn btn-info" value="<?php echo _login_link; ?>">
             </form>
             <br>
-            <a class="underline center-align font8" href="register.php">Create New Account</a>
+            <a class="center-align font8" href="register.php"><?php echo _create_account; ?></a>
         </div>
     </div>
 </body>

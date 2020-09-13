@@ -17,11 +17,11 @@ $find_user = $db->first("SELECT * FROM users WHERE email ='$email' and password=
 
 if ($find_user) {
     $_SESSION['email'] = $email;
-    $message = "You Login successfully.";
+    $message = _successfully_login;
     require_once "msg-success.php";
     exit();
 } else {
-    $message = "Sorry! email or password was wrong!<br><a href='login.php' class='underline'>Login</a>";
+    $message = _failure_login;
     require_once "msg-failure.php";
     exit();
 }
