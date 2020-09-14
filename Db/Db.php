@@ -75,6 +75,12 @@ class Db
         return $this->connection->insert_id;
     }
 
+    public function update($sql)
+    {
+        $this->connection->query($sql);
+        return $this->connection->affected_rows;
+    }
+
     public function connection()
     {
         return $this->connection;

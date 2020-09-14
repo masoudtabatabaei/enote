@@ -23,3 +23,10 @@ define('_ph_email' , "پست الکترونیک");
 define('_ph_password' , "رمز عبور ");
 define('_ph_repeat_password' , "تکرار رمز عبور ");
 define('_ph_fullName' , "نام و نام خانوادگی");
+
+define('_ID' , "شناسه");
+define('_title' , "عنوان");
+define('_description' , "توضیحات");
+define('_status' , "وضعیت");
+define('_creation_time' , "تاریخ ثبت");
+define('_actions' , "عملیات");

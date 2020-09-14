@@ -23,3 +23,10 @@ define('_ph_email' , "Email");
 define('_ph_password' , "Password");
 define('_ph_repeat_password' , "Repeat Password");
 define('_ph_fullName' , "Full Name");
+
+define('_ID' , "ID");
+define('_title' , "Title");
+define('_description' , "Description");
+define('_status' , "Status");
+define('_creation_time' , "Creation Time");
+define('_actions' , "Actions");

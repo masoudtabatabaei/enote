@@ -17,6 +17,7 @@ $find_user = $db->first("SELECT * FROM users WHERE email ='$email' and password=
 
 if ($find_user) {
     $_SESSION['email'] = $email;
+    $_SESSION['user_id'] = $find_user['id'];
     $message = _successfully_login;
     require_once "msg-success.php";
     exit();

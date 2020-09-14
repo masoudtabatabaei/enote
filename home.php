@@ -12,6 +12,9 @@ if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit();
 }
+
+$db = Db::getInstance();
+$notes = $db->query("SELECT * FROM notes WHERE user_id = {$_SESSION['user_id']}");
 ?>
 
 <html lang="fa">
@@ -25,7 +28,46 @@ if (!isset($_SESSION['email'])) {
 <body>
 <div class="header">
     <div class="item profile"><?php echo $_SESSION['email']; ?></div>
-    <div class="item"><a href="logout.php"><?php echo _logout_link; ?></a></div>
+    <div class="item"><a class="btn btn-exit" href="logout.php"><?php echo _logout_link; ?></a></div>
+</div>
+<div class="wrapper">
+    <a href="#" class="btn btn-info">ساخت یادداشت جدید</a>
+    <br>
+    <table>
+        <tr>
+            <th><?php echo _ID ;?></th>
+            <th><?php echo _title ;?></th>
+            <th><?php echo _description ;?></th>
+            <th><?php echo _creation_time ;?></th>
+            <th><?php echo _actions ;?></th>
+        </tr>
+        <?php foreach ($notes as $note) {
+            if ($note['status'] == "Done") { ?>
+                <tr style="background-color: #02e949;">
+            <?php } else { ?>
+                <tr>
+            <?php } ?>
+                <td><?php echo $note['id']; ?></td>
+                <td><?php echo $note['title']; ?></td>
+                <td><?php echo $note['description']; ?></td>
+                <td style="direction: ltr;"><?php echo $note['created_at']; ?></td>
+                <td class="actions-container-btn">
+                    <a href="changeStatus.php?id=<?php echo $note['id']; ?>&status=<?php echo $note['status']; ?>" class="tooltip actions-btn">
+                        <span class="tooltiptext">Toggle status</span>
+                        <img src="img/change.png">
+                    </a>
+                    <a href="edit.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
+                        <span class="tooltiptext">Edit</span>
+                        <img src="img/edit.png">
+                    </a>
+                    <a href="delete.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
+                        <span class="tooltiptext">Remove</span>
+                        <img src="img/recycle-bin.png">
+                    </a>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
 </div>
 </body>
 </html>
