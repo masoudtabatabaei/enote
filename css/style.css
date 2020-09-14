@@ -9,7 +9,7 @@
     padding: 0;
 }
 
-body , input{
+body , input , textarea {
     font-family: IRANSans , "Times New Roman";
 }
 
@@ -61,6 +61,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 a {
     text-decoration: none !important;
+    cursor: pointer;
 }
 
 .center-align {
@@ -173,12 +174,16 @@ a {
     font-weight: bold;
 }
 
-.main-form input:not([type="submit"]) {
+.main-form input:not([type="submit"]) , textarea{
     border: 1px solid #dddddd;
     border-radius: 6px;
     padding: 10px;
     width: 100%;
     margin: 6px auto;
+}
+
+input[type="submit"] {
+    cursor: pointer;
 }
 
 .header {

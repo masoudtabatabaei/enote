@@ -30,3 +30,8 @@ define('_description' , "Description");
 define('_status' , "Status");
 define('_creation_time' , "Creation Time");
 define('_actions' , "Actions");
+define('_create_new_note' , "Create New Note");
+define('_new_note_form' , "Create Note Form");
+define('_note_title' , "Note Title");
+define('_note_description' , "Note Description");
+define('_note_insert_btn' , "Insert Note");

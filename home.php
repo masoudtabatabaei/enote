@@ -31,7 +31,7 @@ $notes = $db->query("SELECT * FROM notes WHERE user_id = {$_SESSION['user_id']}"
     <div class="item"><a class="btn btn-exit" href="logout.php"><?php echo _logout_link; ?></a></div>
 </div>
 <div class="wrapper">
-    <a href="#" class="btn btn-info">ساخت یادداشت جدید</a>
+    <a href="note_form.php" class="btn btn-info"><?php echo _create_new_note; ?></a>
     <br>
     <table>
         <tr>

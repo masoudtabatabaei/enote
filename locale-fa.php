@@ -30,3 +30,8 @@ define('_description' , "توضیحات");
 define('_status' , "وضعیت");
 define('_creation_time' , "تاریخ ثبت");
 define('_actions' , "عملیات");
+define('_create_new_note' , "ایجاد یادداشت جدید");
+define('_new_note_form' , "فرم ایجاد یادداشت جدید");
+define('_note_title' , "عنوان یادداشت");
+define('_note_description' , "توضیحات یادداشت ");
+define('_note_insert_btn' , "ثبت یادداشت ");
