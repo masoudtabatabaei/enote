@@ -23,7 +23,7 @@ $notes = $db->query("SELECT * FROM notes WHERE user_id = {$_SESSION['user_id']}"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--    <link rel="stylesheet" href="css/materialize.min.css">-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?<?php echo time()?>">
 </head>
 <body>
 <div class="header">
@@ -49,21 +49,23 @@ $notes = $db->query("SELECT * FROM notes WHERE user_id = {$_SESSION['user_id']}"
             <?php } ?>
                 <td><?php echo $note['id']; ?></td>
                 <td><?php echo $note['title']; ?></td>
-                <td><?php echo $note['description']; ?></td>
+                <td style="width: 40%"><?php echo $note['description']; ?></td>
                 <td style="direction: ltr;"><?php echo $note['created_at']; ?></td>
                 <td class="actions-container-btn">
-                    <a href="changeStatus.php?id=<?php echo $note['id']; ?>&status=<?php echo $note['status']; ?>" class="tooltip actions-btn">
-                        <span class="tooltiptext">Toggle status</span>
-                        <img src="img/change.png">
-                    </a>
-                    <a href="edit.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
-                        <span class="tooltiptext">Edit</span>
-                        <img src="img/edit.png">
-                    </a>
-                    <a href="delete.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
-                        <span class="tooltiptext">Remove</span>
-                        <img src="img/recycle-bin.png">
-                    </a>
+                    <div>
+                        <a href="changeStatus.php?id=<?php echo $note['id']; ?>&status=<?php echo $note['status']; ?>" class="tooltip actions-btn">
+                            <span class="tooltiptext">Toggle status</span>
+                            <img src="img/change.png">
+                        </a>
+                        <a href="edit.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
+                            <span class="tooltiptext">Edit</span>
+                            <img src="img/edit.png">
+                        </a>
+                        <a href="delete.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
+                            <span class="tooltiptext">Remove</span>
+                            <img src="img/recycle-bin.png">
+                        </a>
+                    </div>
                 </td>
             </tr>
         <?php } ?>

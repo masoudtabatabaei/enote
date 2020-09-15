@@ -18,6 +18,6 @@ if (!isset($_SESSION['user_id'])) {
 $db = Db::getInstance();
 $status = ($note_status == "Pending") ? "Done" : "Pending" ;
 
-$update = $db->update("UPDATE notes SET status = '{$status}' WHERE id = {$note_id} and user_id = {$_SESSION['user_id']}");
+$update = $db->modify("UPDATE notes SET status = '{$status}' WHERE id = {$note_id} and user_id = {$_SESSION['user_id']}");
 
 header("Location: home.php");

@@ -112,12 +112,6 @@ a {
     font-weight: bold;
 }
 
-.actions-container-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .actions-btn {
     margin: 0 4px;
     flex: 1;

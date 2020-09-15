@@ -14,7 +14,7 @@ $note_description = $_POST['note_description'];
 $db = Db::getInstance();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: home.php");
+    header("Location: login.php");
 }
 
 $now = date("Y-m-d H:i:s");
