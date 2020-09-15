@@ -22,7 +22,7 @@ require_once "main.php";
 <div class="form-container">
     <div class="container center-align">
         <div class="page-icon mar2">
-            <img src="img/notes.png">
+            <img src="img/write.png">
         </div>
         <p class="form-title pad-tb-1 font11"><?php echo _new_note_form; ?></p>
         <form class="main-form" method="post" action="create.php">

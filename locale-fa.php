@@ -35,3 +35,5 @@ define('_new_note_form' , "فرم ایجاد یادداشت جدید");
 define('_note_title' , "عنوان یادداشت");
 define('_note_description' , "توضیحات یادداشت ");
 define('_note_insert_btn' , "ثبت یادداشت ");
+define('_note_edit_btn' , "ویرایش یادداشت");
+define('_note_edit_form' , "فرم ویرایش یادداشت ");

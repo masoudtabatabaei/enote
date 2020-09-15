@@ -35,3 +35,5 @@ define('_new_note_form' , "Create Note Form");
 define('_note_title' , "Note Title");
 define('_note_description' , "Note Description");
 define('_note_insert_btn' , "Insert Note");
+define('_note_edit_btn' , "Edit Note");
+define('_note_edit_form' , "Edit Note From");

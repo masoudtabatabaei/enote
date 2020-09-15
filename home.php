@@ -57,7 +57,7 @@ $notes = $db->query("SELECT * FROM notes WHERE user_id = {$_SESSION['user_id']}"
                             <span class="tooltiptext">Toggle status</span>
                             <img src="img/change.png">
                         </a>
-                        <a href="edit.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
+                        <a href="edit-form.php?id=<?php echo $note['id']; ?>" class="tooltip actions-btn">
                             <span class="tooltiptext">Edit</span>
                             <img src="img/edit.png">
                         </a>
