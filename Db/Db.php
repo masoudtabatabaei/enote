@@ -46,16 +46,21 @@ class Db
 
     public function query($sql)
     {
-        $result = [];
-        $query  = $this->connection->query($sql);
+        $response = [];
+        $result  = $this->connection->query($sql);
 
-        if ($query && $query->num_rows > 0) {
-            while ($row = $query->fetch_assoc()) {
-                $result[] = $row;
+        if (!$result) {
+            echo "Query failed due to " . mysqli_error($this->connection);
+            exit();
+        }
+
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
             }
         }
 
-        return $result;
+        return $response;
     }
 
     public function first($sql)
@@ -71,13 +76,25 @@ class Db
 
     public function insert($sql)
     {
-        $this->connection->query($sql);
+        $result = $this->connection->query($sql);
+
+        if (!$result) {
+            echo "Query failed due to " . mysqli_error($this->connection);
+            exit();
+        }
+
         return $this->connection->insert_id;
     }
 
     public function modify($sql)
     {
-        $this->connection->query($sql);
+        $result = $this->connection->query($sql);
+
+        if (!$result) {
+            echo "Query failed due to " . mysqli_error($this->connection);
+            exit();
+        }
+
         return $this->connection->affected_rows;
     }
 
